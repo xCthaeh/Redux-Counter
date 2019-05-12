@@ -4,17 +4,16 @@ import { increment, decrement } from "../actions";
 
 class Counter extends Component {
   incrementIfOdd = () => {
-    // Stretch Problem: Implement an increment function that
-    // only increments if the counter value is odd
+    if (this.props.count % 2 !== 0) {
+      this.props.increment();
+    }
   };
 
   incrementAsync = () => {
-    // Stretch Problem: Implement an increment function that
-    // increments after waiting for one second
+    setTimeout(this.props.increment, 1000);
   };
 
   render() {
-    console.log(this.props);
     // Fill in the two button onClick methods
     // Upon clicking these buttons, the count
     // should decrement or increment accordingly
